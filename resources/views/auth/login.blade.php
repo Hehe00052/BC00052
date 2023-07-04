@@ -29,7 +29,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
-
+ 
         .error {
             color: red;
         }

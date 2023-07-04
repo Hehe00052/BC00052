@@ -58,7 +58,7 @@ Route::get('/welcome', function () {
 Route::get('/product', function () {
     return view('product');
 })->name('product');
-
+ 
 
 Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
 Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
