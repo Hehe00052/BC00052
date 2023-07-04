@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\needhelpController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,8 @@ Route::get('/product', function () {
 
 Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
 Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
+
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
 
 Route::get('/admin/needhelp', [AdminController::class, 'index'])->name('admin.index');
