@@ -59,4 +59,29 @@ class ProductController extends Controller
         $products = Product::all();
         return view('product', ['product' => $products]);
     }
+    public function destroy($id)
+    {
+        $product = Product::find($id);
+
+        if (!$product) {
+            return redirect()->route('products.index')->with('error', 'Product not found');
+        }
+
+        $product->delete();
+
+        return redirect()->route('products.index')->with('success', 'Product deleted successfully');
+    }
+
+    
+    public function edit($id)
+    {
+        $product = Product::find($id);
+
+        if (!$product) {
+            return redirect()->route('products.index')->with('error', 'Product not found');
+        }
+
+        return view('editproduct', compact('product'));
+    }
+    
 }

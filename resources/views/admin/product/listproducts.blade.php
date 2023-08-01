@@ -14,6 +14,7 @@
                                     <th>Price</th>
                                     <th>Description</th>
                                     <th>Photo</th>
+                                    <th>Actions</th> <!-- New column for "Actions" -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -29,6 +30,17 @@
                                             @else
                                                 No Photo
                                             @endif
+                                        </td>
+                                        <td>
+                                            <!-- Edit button -->
+                                            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-primary">Edit</a>
+
+                                            <!-- Delete button -->
+                                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" style="display: inline-block;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

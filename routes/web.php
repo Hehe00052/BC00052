@@ -47,7 +47,7 @@ Route::get('/welcome', function () {
 })->name('index');
 
 
-Route::get('/product', [ProductController::class, 'showProductsForCustomers'])->name('products.index');
+Route::get('/product', [ProductController::class, 'showProductsForCustomers'])->name('product');
 
 
 Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
@@ -71,4 +71,10 @@ Route::post('/products', [ProductController::class, 'store'])->name('products.st
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 
+Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+
+// routes/web.php
+
+Route::post('/cart/add', 'CartController@addToCart')->name('cart.add');
 
