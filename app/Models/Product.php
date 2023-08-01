@@ -14,13 +14,5 @@ class Product extends Model
     // Additional methods, relationships, and other customizations can be added here
 }
 
-class Productadd extends Controller
-{
-    public function store(Request $request)
-    {
-        $name = $request->input('name');
-        $price = $request->input('price');
-        $photo = $request->input('photo');
-        $description = $request->input('description');
-    }
-}
+
+

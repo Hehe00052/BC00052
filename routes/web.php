@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\needhelpController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -60,6 +61,15 @@ Route::get('/admin/needhelp', [AdminController::class, 'index'])->name('admin.in
 Route::get('/admin/needhelp/{id}', [AdminController::class, 'show'])->name('admin.show');
 Route::delete('/admin/needhelp/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
 
+
+// Route to display the form for creating a new product
+Route::get('/admin/addproduct', [ProductController::class, 'create'])->name('products.create');
+
+// Route to store the newly created product
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+
+// Route to display the list of products (assuming you have an 'index' method in the ProductController)
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 
 
