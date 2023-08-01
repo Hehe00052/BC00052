@@ -54,4 +54,9 @@ class ProductController extends Controller
         $products = Product::all();
         return view('admin.product.listproducts', compact('products'));
     }
+    public function showProductsForCustomers()
+    {
+        $products = Product::all();
+        return view('product', ['product' => $products]);
+    }
 }

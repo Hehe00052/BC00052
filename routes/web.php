@@ -46,10 +46,9 @@ Route::get('/welcome', function () {
     return view('welcome');
 })->name('index');
 
-Route::get('/product', function () {
-    return view('product');
-})->name('product');
- 
+
+Route::get('/product', [ProductController::class, 'showProductsForCustomers'])->name('products.index');
+
 
 Route::get('/admin/{id}/edit', [AdminController::class, 'edit'])->name('admin.edit');
 Route::put('/admin/{id}', [AdminController::class, 'update'])->name('admin.update');
