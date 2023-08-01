@@ -9,9 +9,11 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'price', 'photo', 'description'];
+    // Define the table associated with the Product model
+    protected $table = 'products';
 
-    // Additional methods, relationships, and other customizations can be added here
+    // Define the fillable attributes for mass assignment
+    protected $fillable = ['name', 'price', 'photo', 'description'];
 }
 
 

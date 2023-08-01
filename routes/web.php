@@ -5,6 +5,7 @@ use App\Http\Controllers\needhelpController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -75,6 +76,8 @@ Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])
 Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 
 // routes/web.php
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 
-Route::post('/cart/add', 'CartController@addToCart')->name('cart.add');
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+
 
