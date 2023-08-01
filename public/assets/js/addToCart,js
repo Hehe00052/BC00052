@@ -1,0 +1,5 @@
+function addToCart(productId) {
+    // You can implement the logic to add the selected product to the shopping cart here.
+    // For this example, we'll simply show an alert with the selected product's ID.
+    alert('Product ID ' + productId + ' added to the cart.');
+}
