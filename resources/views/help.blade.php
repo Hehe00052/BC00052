@@ -32,7 +32,7 @@
 <header class="">
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><h2>BC<em>00052</em></h2></a>
+            <a class="navbar-brand" href="index.html"><h2 style="color: black;">BC<em>00052</em></h2></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
                         <a class="nav-link" href="{{ route('product') }}">Product</a>
                         </li>
                         <li class="nav-item active">
-                        <a style="color: white"class="nav-link" href="{{ route('help') }}">Contact Us</a>
+                        <a style="color: black"class="nav-link" href="{{ route('help') }}" >Contact Us</a>
                         </li>
                     </ul>
             </div>

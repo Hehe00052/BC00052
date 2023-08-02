@@ -17,16 +17,17 @@
 <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
 <link rel="stylesheet" href="assets/css/owl.css">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/search.css">
 
 
 
 <!-- Custom CSS for product cards -->
 <style>
     body {
-        background-color: white;
+        background-color:  #fef2f2;
     }
     .card-body{
-        background-color: #ffe6e6;
+        background-color:  white;
         height: auto;
         border-radius: 5.5rem;
         width: auto;
@@ -102,7 +103,7 @@
 <header class="">
 <nav class="navbar navbar-expand-lg">
         <div class="container">
-        <a class="navbar-brand" href="index.html"><h2>BC<em>00052</em></h2></a>
+        <a class="navbar-brand" href="index.html"><h2 style="color: black;">BC<em>00052</em></h2></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -134,7 +135,7 @@
         </div>
     </nav></header>
    
-<!-- Page Content -->
+<!-- banner -->
 <div class="page-heading about-heading header-text">
     <div class="">
         <div class="">
@@ -147,7 +148,17 @@
         </div>
     </div>
 </div>   
-<br>
+<!-- Page Content -->
+<!-- search -->
+<div class="wrap">
+   <div class="search">
+      <input type="text" class="searchTerm" placeholder="What are you looking for?">
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+     </button>
+   </div>
+</div>
+<!-- end search -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">

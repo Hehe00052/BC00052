@@ -68,8 +68,14 @@ Route::get('/admin/addproduct', [ProductController::class, 'create'])->name('pro
 // Route to store the newly created product
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
+
+// Route to show
+Route::get('/admin/listproducts.blade.php', [ProductController::class, 'index'])->name('productsa.index');
+
+Route::get('/admin/index.blade.php', [needhelpController::class, 'index'])->name('needhelpa.index');
+
 // Route to display the list of products (assuming you have an 'index' method in the ProductController)
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/admin/products', [ProductController::class, 'index'])->name('products.index');
 
 
 Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');

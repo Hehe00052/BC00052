@@ -29,6 +29,7 @@ header {
 header .navbar {
 	padding: 17px 0px;
 }
+
 .background-header .navbar {
 	padding: 17px 0px;
 }
@@ -165,14 +166,13 @@ header .navbar {
 
                 <div class="d-flex align-items-center mb-5">
                   <div class="flex-shrink-0">
-                  <img src="assets/images/product_03.jpg"
+                  <img src="assets/images/mewo.jpg"
                       class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
                   </div>
                   <div class="flex-grow-1 ms-3">
-                    <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
-                    <h5 class="text-primary">Box game 1</h5>
+                    <h5 class="text-primary">&nbsp; Mewtwo </h5>
                     <div class="d-flex align-items-center">
-                      <p class="fw-bold mb-0 me-5 pe-3">79$</p>
+                      <p class="fw-bold mb-0 me-5 pe-3">&emsp;8.00$</p>
                       <div class="def-number-input number-input safari_only">
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                           class="minus"></button>
@@ -187,14 +187,13 @@ header .navbar {
 
                 <div class="d-flex align-items-center mb-5">
                   <div class="flex-shrink-0">
-                  <img src="assets/images/product_02.jpg"
+                  <img src="assets/images/snolax.jpg"
                       class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
                   </div>
                   <div class="flex-grow-1 ms-3">
-                    <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
-                    <h5 class="text-primary">Box game 2</h5>
+                    <h5 class="text-primary">&nbsp; Snolax</h5>
                     <div class="d-flex align-items-center">
-                      <p class="fw-bold mb-0 me-5 pe-3">39$</p>
+                      <p class="fw-bold mb-0 me-5 pe-3">&emsp;123.00$</p>
                       <div class="def-number-input number-input safari_only">
                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                           class="minus"></button>

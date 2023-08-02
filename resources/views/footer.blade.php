@@ -30,7 +30,7 @@ ul{
   list-style: none;
 }
 .footer{
-  background-color: #24262b;
+  background-color: white;
     padding: 70px 0;
 }
 .footer-col{
@@ -109,36 +109,36 @@ ul{
      <div class="container">
       <div class="row">
         <div class="footer-col">
-          <h4>company</h4>
+          <h4 style="color: black">company</h4>
           <ul>
-            <li><a href="{{ route('about') }}">About us</a></li>
-            <li><a href="{{ route('services') }}">Our services</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="{{ route('about') }}" style="color: black">About us</a></li>
+            <li><a href="{{ route('services') }}" style="color: black">Our services</a></li>
+            <li><a href="#" style="color: black">Privacy policy</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>interesting</h4>
+          <h4 style="color: black">interesting</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="{{ route('services') }}">Our services</a></li>
+            <li><a href="#" style="color: black">Home</a></li>
+            <li><a href="#" style="color: black">Product</a></li>
+            <li><a href="{{ route('services') }}" style="color: black">Our services</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Get help</h4>
+          <h4 style="color: black">Get help</h4>
           <ul>
-          <li><a href="{{ route('help') }}">FAQ</a></li>
-          <li><a href="{{ route('about') }}">About us</a></li>
-          <li><a href="{{ route('services') }}">Our services</a></li>
+          <li><a href="{{ route('help') }}" style="color: black">FAQ</a></li>
+          <li><a href="{{ route('about') }}" style="color: black">About us</a></li>
+          <li><a href="{{ route('services') }}" style="color: black">Our services</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>follow us</h4>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <h4 style="color: black">follow us</h4>
+          <div class="social-links" >
+            <a href="#"><i class="fab fa-facebook-f" style="color: black"></i></a>
+            <a href="#"><i class="fab fa-twitter" style="color: black"></i></a>
+            <a href="#"><i class="fab fa-instagram" style="color: black"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in" style="color: black"></i></a>
           </div>
         </div>
       </div>
