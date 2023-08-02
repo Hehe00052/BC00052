@@ -89,7 +89,7 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<footer>
+<footer style="text-align:center">
         &copy; BC00052-ATN Shop
     </footer>
 </html>

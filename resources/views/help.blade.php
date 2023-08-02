@@ -93,11 +93,8 @@
     </div>
 </div>
 </div>
-    <footer>
-        <div class="container">
-        Hotline: 0916198548
-        </div>
-    </footer>
+@include('footer')
+
 
     
 <!-- Bootstrap core JavaScript -->
