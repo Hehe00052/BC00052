@@ -7,14 +7,11 @@ body{
 
 .search {
   width: 100%;
-  position: relative;
-  display: flex;
 }
 
 .searchTerm {
   width: 100%;
   border: 3px solid #ff75bc;
-  border-right: none;
   padding: 20px;
   height: 20px;
   border-radius: 10px 0 0 10px;
@@ -40,9 +37,8 @@ body{
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
-  width: 30%;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 25%;
   transform: translate(-50%, -50%);
 }

@@ -115,7 +115,7 @@ class ProductController extends Controller
             return redirect()->route('product.index')->with('error', 'No products found.');
         }
     
-        return view('product', ['product' => $products]);
+        return view('search', ['product' => $products]);
     }
 
 }

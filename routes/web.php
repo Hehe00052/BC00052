@@ -88,7 +88,7 @@ Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add')
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
 
 //route for search
-Route::get('/product/search', [ProductController::class, 'search'])->name('product.search');
+Route::get('/search', [ProductController::class, 'search'])->name('product.search');
 
 
 
