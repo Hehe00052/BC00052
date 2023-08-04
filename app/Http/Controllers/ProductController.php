@@ -72,16 +72,35 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Product deleted successfully');
     }
 
-    
     public function edit($id)
-    {
-        $product = Product::find($id);
+{
+    $product = Product::findOrFail($id);
+    return view('admin.product.editproduct', compact('product'));
+}
+public function update(Request $request, $id)
+{
+    $product = Product::findOrFail($id);
 
-        if (!$product) {
-            return redirect()->route('products.index')->with('error', 'Product not found');
-        }
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'price' => 'required|numeric|min:0',
+        'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        'description' => 'required|string',
+    ]);
 
-        return view('editproduct', compact('product'));
+    if ($request->hasFile('photo')) {
+        $photoPath = $request->file('photo')->store('products', 'public');
+    } else {
+        $photoPath = $product->photo;
     }
-    
+
+    $product->update([
+        'name' => $request->input('name'),
+        'price' => $request->input('price'),
+        'photo' => $photoPath,
+        'description' => $request->input('description'),
+    ]);
+
+    return redirect()->route('products.index')->with('success', 'Product updated successfully!');
+}
 }

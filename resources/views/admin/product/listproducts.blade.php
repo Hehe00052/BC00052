@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
+<meta name="description" content="Please give me D mark :3">
+<meta name="author" content="hehe">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
 <title>BC00052</title>
@@ -13,7 +14,6 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    
 
 <style>
     
@@ -56,17 +56,44 @@ td{
   border-bottom: solid 1px rgba(255,255,255,0.1);
 }
 
+.btn{
+        display: inline-block;
+        outline: none;
+        cursor: pointer;
+        font-size: 15px;
+        border-radius: 500px;
+        transition-property: background-color,border-color,color,box-shadow,filter;
+        transition-duration: .3s;
+        border: 1px solid;
+        letter-spacing: 2px;
+        min-width: 100px;
+        text-transform: uppercase;
+        white-space: normal;
+        font-weight: 700;
+        height:15;
+        text-align: center;
+        color: #ffffff;
+        box-shadow: inset 0 0 0 2px #616467;
+        background-color: transparent;
+        :hover{
+        color: #fff;
+        background-color: #616467;
+        }
+ 
+    }
+    .btn-danger{
+        border-color:  #ff3300;
+    }
+    .btn-success{
+        border-color:  #00ff00;
+    }
 
-/* demo styles */
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
 body{
   background: -webkit-linear-gradient(left, #25c481, #25b7c4);
   background: linear-gradient(to right, #25c481, #25b7c4);
   font-family: 'Roboto', sans-serif;
-}
-section{
-  margin: 50px;
 }
 
 
@@ -95,7 +122,6 @@ section{
   text-decoration: underline;
 }
 
-
 /* for custom scrollbar for webkit browser*/
 
 ::-webkit-scrollbar {
@@ -107,39 +133,7 @@ section{
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
 }
-.btn{
-    display: inline-block;
-    outline: none;
-    cursor: pointer;
-    font-size: 15px;
-    line-height: 1;
-    border-radius: 500px;
-    transition-property: background-color,border-color,color,box-shadow,filter;
-    transition-duration: .3s;
-    border: 1px solid transparent;
-    letter-spacing: 2px;
-    min-width: 155px;
-    text-transform: uppercase;
-    white-space: normal;
-    font-weight: 700;
-    text-align: center;
-    padding: 16px 14px 18px ;
-    color: #ffffff;
-    box-shadow: inset 0 0 0 2px #616467;
-    background-color: transparent;
-    height: 48px;
-    :hover{
-    color: #fff;
-    background-color: #616467;
-    }
-                
-}
-.btn-danger{
-    border-color:  #ff3300;
-}
-.btn-success{
-    border-color:  #00ff00;
-}
+
 </style>
 @include('header')
 
@@ -155,7 +149,7 @@ section{
                                     <th>Price</th>
                                     <th>Description</th>
                                     <th>Photo</th>
-                                    <th>Actions</th> <!-- New column for "Actions" -->
+                                    <th>Actions</th> 
                                 </tr>
                             </thead>
                             </table>
@@ -163,40 +157,46 @@ section{
                             <div class="tbl-content">
                             <table cellpadding="0" cellspacing="0">
                             <tbody>
-                                @foreach ($products as $product)
-                                    <tr>
-                                        <td>{{ $product->id }}</td>
-                                        <td>{{ $product->name }}</td>
-                                        <td>${{ number_format($product->price, 2) }}</td>
-                                        <td>{{ $product->description }}</td>
-                                        <td>
-                                            @if ($product->photo)
-                                                <img src="{{ asset('storage/' . $product->photo) }}" alt="{{ $product->name }}" style="max-height: 100px; max-width:100px">
-                                            @else
-                                                No Photo
-                                            @endif
-                                        </td>
-                                        <td>
-                                            <!-- Edit button -->
-                                            <div>
-                                            <button type="button" class="btn btn-success">
-                                                <a href="{{ route('admin.products.edit', $product->id) }}" class="button" style="color: white; text-decoration: none;">Edit</a>
-                                            </button>
-                                            </div> <br>
-                                            <!-- Delete button -->
-                                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" style="display: inline-block;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endforeach
+    @foreach ($products as $product)
+        <tr>
+            <td>{{ $product->id }}</td>
+            <td>{{ $product->name }}</td>
+            <td>${{ number_format($product->price, 2) }}</td>
+            <td>{{ $product->description }}</td>
+            <td>
+                @if ($product->photo)
+                    <img src="{{ asset('storage/' . $product->photo) }}" alt="{{ $product->name }}" style="max-height: 100px; max-width:100px">
+                @else
+                    No Photo
+                @endif
+            </td>
+            <td>
+                <!-- Edit and Delete buttons -->
+                <div style="display: flex; align-items: center;">
+                    <!-- Edit button -->
+                    <div style="margin-right: 10px;">
+                        <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm">
+                            <i class="fas fa-edit"></i> 
+                        </a>
+                    </div>
+                    
+                    <!-- Delete button -->
+                    <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    @endforeach
+    @else
+        <p>No products found.</p>
+    @endif
+</tbody>
 
-                    @else
-                        <p>No products found.</p>
-                    @endif
-                    </tbody>
     </table>
 </div>
 </section>

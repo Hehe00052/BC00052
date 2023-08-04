@@ -158,32 +158,41 @@
         <div class="tbl-content">
         <table cellpadding="0" cellspacing="0">
         <tbody>
-            @foreach ($needHelpItems as $item)
-                <tr>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->email }}</td>
-                    <td>{{ $item->message }}</td>
-                    <td>{{ $item->created_at }}</td>
-                    <td>{{ $item->updated_at }}</td>
-                    <td>
-                        <div>
-                        <a href="{{ route('admin.show', $item->id) }}"style="font-size: 35px; color: white;" ><i class="fa-solid fa-eye"></i></a>
-                        </div><br>
-                        <div>
-                        <a href="{{ route('admin.edit', $item->id) }}"><i class="fa-regular fa-pen-to-square" style="font-size: 35px; color: white;color: #ffffff;"></i></a>
-                        </div><br>
-                        <form action="{{ route('admin.destroy', $item->id) }}" method="POST" style="display: inline-block;">
-    @csrf
-    @method('DELETE')
-    <button type="submit" class="" onclick="return confirm('Are you sure you want to delete this item?')" style="background: none; font-size: 35px;border: none; padding: 0; cursor: pointer;">
-        <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
-    </button>
-</form>
+    @foreach ($needHelpItems as $item)
+        <tr>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->email }}</td>
+            <td>{{ $item->message }}</td>
+            <td>{{ $item->created_at }}</td>
+            <td>{{ $item->updated_at }}</td>
+            <td>
+                <!-- View button -->
+                <div style="display: inline-block; margin-right: 10px;">
+                    <a href="{{ route('admin.show', $item->id) }}" style="font-size: 35px; color: white;">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+                </div>
 
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
+                <!-- Edit button -->
+                <div style="display: inline-block; margin-right: 10px;">
+                    <a href="{{ route('admin.edit', $item->id) }}">
+                        <i class="fa-regular fa-pen-to-square" style="font-size: 35px; color: white;"></i>
+                    </a>
+                </div>
+
+                <!-- Delete button -->
+                <form action="{{ route('admin.destroy', $item->id) }}" method="POST" style="display: inline-block;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="" onclick="return confirm('Are you sure you want to delete this item?')" style="background: none; font-size: 35px; border: none; padding: 0; cursor: pointer;">
+                        <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                    </button>
+                </form>
+            </td>
+        </tr>
+    @endforeach
+</tbody>
+
         
     </table>
 </div>

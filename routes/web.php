@@ -69,6 +69,9 @@ Route::get('/admin/addproduct', [ProductController::class, 'create'])->name('pro
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
 
+Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+
 // Route to show
 Route::get('/admin/listproducts.blade.php', [ProductController::class, 'index'])->name('productsa.index');
 
@@ -77,8 +80,6 @@ Route::get('/admin/index.blade.php', [needhelpController::class, 'index'])->name
 // Route to display the list of products (assuming you have an 'index' method in the ProductController)
 Route::get('/admin/products', [ProductController::class, 'index'])->name('products.index');
 
-
-Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
 Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 
 // routes/web.php
