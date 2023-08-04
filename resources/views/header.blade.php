@@ -8,7 +8,7 @@
 <style>
 	body {
 	  background-color: #0a68bb;
-	  background-image: url('https://images.unsplash.com/photo-1564500617448-e541b1df7cee?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+	  background-image: url('https://st.depositphotos.com/30440304/54478/i/600/depositphotos_544788180-stock-photo-style-black-background-geometric-layers.jpg');
 	  background-size: cover;
 	}
 

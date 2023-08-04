@@ -5,10 +5,12 @@
 <head>
     <title>Admin Need Help Items</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
     <style>
     
     h1{
-      font-size: 30px;
+      font-size: 50px;
       color: #fff;
       text-transform: uppercase;
       font-weight: 300;
@@ -18,21 +20,23 @@
     table{
       width:100%;
       table-layout: fixed;
+      
     }
     .tbl-header{
       background-color: rgba(255,255,255,0.3);
+      border: white;
      }
     .tbl-content{
       height:561px;
       overflow-x:auto;
       margin-top: 0px;
-      border: 1px solid rgba(255,255,255,0.3);
+      border: 1px solid white;
     }
     th{
       padding: 20px 15px;
       text-align: left;
-      font-weight: 500;
-      font-size: 12px;
+      font-weight: 900;
+      font-size: 20px;
       color: #fff;
       text-transform: uppercase;
     }
@@ -40,8 +44,8 @@
       padding: 15px;
       text-align: left;
       vertical-align:middle;
-      font-weight: 300;
-      font-size: 12px;
+      font-weight: 600;
+      font-size: 13px;
       color: #fff;
       border-bottom: solid 1px rgba(255,255,255,0.1);
     }
@@ -122,7 +126,7 @@
         color: #fff;
         background-color: #616467;
         }
-                    
+ 
     }
     .btn-danger{
         border-color:  #ff3300;
@@ -163,16 +167,19 @@
                     <td>{{ $item->updated_at }}</td>
                     <td>
                         <div>
-                        <a href="{{ route('admin.show', $item->id) }}" class="btn btn-primary">View</a>
+                        <a href="{{ route('admin.show', $item->id) }}"style="font-size: 35px; color: white;" ><i class="fa-solid fa-eye"></i></a>
                         </div><br>
                         <div>
-                        <a href="{{ route('admin.edit', $item->id) }}" class="btn btn-success">Edit</a>
+                        <a href="{{ route('admin.edit', $item->id) }}"><i class="fa-regular fa-pen-to-square" style="font-size: 35px; color: white;color: #ffffff;"></i></a>
                         </div><br>
                         <form action="{{ route('admin.destroy', $item->id) }}" method="POST" style="display: inline-block;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
-                        </form>
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="" onclick="return confirm('Are you sure you want to delete this item?')" style="background: none; font-size: 35px;border: none; padding: 0; cursor: pointer;">
+        <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+    </button>
+</form>
+
                     </td>
                 </tr>
             @endforeach

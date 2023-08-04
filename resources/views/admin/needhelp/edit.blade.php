@@ -20,7 +20,7 @@
             <h2 style="text-align:center">Edit Need Help Item</h2>
             </div><br>
          <div>
-         <label for="name" class="formbold-form-label">Name:</label>
+         <label for="name" class="formbold-form-label"><b>Name:</b></label>
          <input type="text" class="form-control" id="name" name="name" value="{{ $item->name }}">
          </div>
          <div><br>
