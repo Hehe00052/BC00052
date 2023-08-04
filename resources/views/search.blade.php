@@ -149,64 +149,44 @@
     </div>
 </div>   
 <div class="wrap">
-    <div class="search">
-        <form action="{{ route('product.search') }}" method="GET">
-            <input type="text" class="searchTerm" name="query" placeholder="What are you looking for?">
-            <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-            </button>
-        </form>
-    </div>
+   <div class="search">
+      <form action="{{ route('product.search') }}" method="GET">
+         <input type="text" class="searchTerm" name="query" placeholder="What are you looking for?">
+         <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+         </button>
+      </form>
+   </div>
 </div>
 
-<!-- end search -->
+@section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="">
-                <div class=""></div>
-                <div class="card-body">
-                    @if (count($product) > 0)
-                        <div class="row">
-                            @foreach ($product as $productItem)
-                                <div class="col-md-6 col-lg-4 mb-4">
-                                    <div class="product-card">
-                                        @if ($productItem->photo)
-                                            <img src="{{ asset('storage/' . $productItem->photo) }}" class="card-img-top" alt="{{ $productItem->name }}">
-                                        @else
-                                            <div class="no-photo">
-                                                No Photo
-                                            </div>
-                                        @endif
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ $productItem->name }}</h5>
-                                            <p class="card-text1">${{ number_format($productItem->price, 2) }}</p>
-                                            <p1 class="card-text">{{ $productItem->description }}</p1><br><br>
-                                            <form action="{{ route('cart.add') }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="product_id" value="{{ $productItem->id }}">
-                                                <a href="{{ route('cart.show') }}"><button type="submit" role="button" class="button-24">Add to Cart</button></a>
-                                                <!-- HTML !-->
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    @else
-                        <p>No products found.</p>
-                    @endif
+    <h1>Search Results</h1>
+    @if (count($product) > 0)
+        <div class="row">
+            @foreach ($product as $productItem)
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <!-- Assuming you have a 'photo' field in your Product model -->
+                        <img src="{{ asset('storage/' . $productItem->photo) }}" alt="{{ $productItem->name }}">
+                        <h3>{{ $productItem->name }}</h3>
+                        <p>${{ number_format($productItem->price, 2) }}</p>
+                        <p>{{ $productItem->description }}</p>
+                        <form action="{{ route('cart.add') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $productItem->id }}">
+                            <button type="submit">Add to Cart</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-    </div>
+    @else
+        <p>No products found.</p>
+    @endif
 </div>
-<br>
-<!-- Add the button to view the cart -->
-
-<!-- Add the button to view the cart -->
-
-<!-- Footer -->
+@endsection
+</div>
 @include('footer')
 <!-- End Footer -->
 

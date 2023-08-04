@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Edit Product</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 @include('header')
 
-<div class="formbold-main-wrapper">
-    <div class="formbold-form-wrapper">
-    <body>
-    <div class="container">
-        <h2>Edit Product</h2>
-        <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
+<body>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <div class="container">
+                <h2>Edit Product</h2>
+                <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+                    
+                    <div class="form-group">
+                        <label class="formbold-form-label" for="name">Name:</label>
+                        <input type="text" class="formbold-form-input" id="name" name="name" value="{{ $product->name }}" required>
+                    </div>
+                    
+                    <div class="formbold-input-flex">
+                        <div class="formbold-w-45">
+                            <label class="formbold-form-label" for="price">Price:</label>
+                            <input type="number" class="formbold-form-input" id="price" name="price" value="{{ $product->price }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="formbold-form-label" for="photo">Upload Photo:</label>
+                            <input type="file" id="photo" name="photo" class="formbold-form-file">
+                        </div>
 
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="formbold-form-label" for="description">Description:</label>
+                        <textarea class="formbold-form-input" id="description" name="description" required>{{ $product->description }}</textarea>
+                    </div>
+                    
+                    <button type="submit" class="formbold-btn">Update Product</button>
+                </form>
             </div>
-
-            <div class="form-group">
-                <label for="price">Price:</label>
-                <input type="number" class="form-control" id="price" name="price" value="{{ $product->price }}" required>
-            </div>
-
-            <div class="form-group">
-                <label for="photo">Photo:</label>
-                <input type="file" class="form-control-file" id="photo" name="photo">
-            </div>
-
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea class="form-control" id="description" name="description" required>{{ $product->description }}</textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Update Product</button>
-        </form>
+        </div>
     </div>
-</body>
-    </div>
-</div>
 </body>
 </html>
-<style>
-/* Your existing styles from the template */
-</style>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');

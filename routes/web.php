@@ -82,9 +82,13 @@ Route::get('/admin/products', [ProductController::class, 'index'])->name('produc
 
 Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
 
-// routes/web.php
+// routes for cart
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+
+//route for search
+Route::get('/product/search', [ProductController::class, 'search'])->name('product.search');
+
 
 
